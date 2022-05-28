@@ -1,0 +1,20 @@
+{
+  "name": "algo-balanced-parentheses",
+  "version": "1.0.0",
+  "description": "### Write an algorithm that takes in a string and returns a string with balanced parentheses only. The string will contain letters, numbers, and parentheses only.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romeoplatoon/algo-balanced-parentheses.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romeoplatoon/algo-balanced-parentheses/issues"
+  },
+  "homepage": "https://github.com/romeoplatoon/algo-balanced-parentheses#readme"
+}
