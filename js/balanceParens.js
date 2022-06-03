@@ -1,24 +1,31 @@
 balanceParens = (str) => {
-    let noMatch = []
+    let stack = []
+    let remove = []
+    for (let i = 0; i < str.length; i++) {
+        if(str[i] === '('){
+            stack.push(i)
+        } else if(str[i] === ')' && stack.length > 0){
+            stack.pop()
+        } else if(str[i] === '(' || str[i] === ')' && stack.length === 0){
+            remove.push(i)
+        }
+    }
+
+    if(stack.length > 0){
+        for(let num in stack){
+            remove.push(stack[num])
+        }
+    }
+
     let result = []
-    for(let i = 0; i < str.length; i++) {
-        let char = str[i]
-        if(char === '('){
-            noMatch.push(i)
+    for(let i = 0; i < str.length; i++){
+        if(remove.indexOf(i) !== -1){
+            continue
+        } else {
+            result.push(str[i])
         }
     }
-    console.log('all parentheses', noMatch)
-    for(let i = 0; i < str.length; i++) {
-        let char = str[i]
-        if(char === ')' && noMatch.length > 0 && i > noMatch[0]){
-            console.log(str[i], i)
-            noMatch.shift()
-        } else if(char === ')' || (char === ')' && i < noMatch[0]) || (char === ')' && noMatch.length == 0)){
-            result.push(i)
-        }
-    }
-    console.log(noMatch)
-    console.log(result)
+    return result.join('')
 }
 
 module.exports = { balanceParens }
